@@ -168,3 +168,11 @@ type Of13RoleReplyHandler interface {
 type Of13AsyncConfigHandler interface {
 	HandleAsyncConfig(*ofp13.OfpAsyncConfig, *Datapath)
 }
+
+/*****************************************************/
+/* PortStatus Message                             */
+/*****************************************************/
+type Of13OfpPortStatus interface {
+        HandleOfpPortStatus(*ofp13.OfpPortStatus, *Datapath)
+}
+

@@ -146,6 +146,12 @@ func (dp *Datapath) dispatchHandler(msg ofp13.OFMessage) {
 				obj.HandleFlowRemoved(msgi, dp)
 			}
 
+                // case PortStatus
+                case *ofp13.OfpPortStatus:
+                        if obj, ok := app.(Of13OfpPortStatus); ok {
+                                obj.HandleOfpPortStatus(msgi, dp)
+                        }
+
 		// case MultipartReply
 		case *ofp13.OfpMultipartReply:
 			switch msgi.Type {
